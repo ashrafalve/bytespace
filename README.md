@@ -2,7 +2,7 @@
 
 A modern, fully responsive online learning platform landing page built with **Next.js 15**. ByteSpace allows learners to explore courses, track progress, and connect with a vibrant community.
 
-🚀 **Live Demo**: [https://bytespace-ashrafalve.vercel.app](https://bytespace-ashrafalve.vercel.app)
+🚀 **Live Demo**: [https://bytespace-zeta.vercel.app](https://bytespace-zeta.vercel.app)
 
 ---
 
