@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ByteSpace — Online Learning Platform
+
+A modern, fully responsive online learning platform landing page built with **Next.js 15**. ByteSpace allows learners to explore courses, track progress, and connect with a vibrant community.
+
+🚀 **Live Demo**: [https://bytespace-ashrafalve.vercel.app](https://bytespace-ashrafalve.vercel.app)
+
+---
+
+## Tech Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS + Vanilla CSS
+- **Fonts**: Poppins (Google Fonts)
+- **Deployment**: Vercel
+
+---
+
+## Features
+
+- 🎨 Hero section with animated floating cards and slide-up student image
+- 📚 Courses section with filterable course cards
+- 🌟 Testimonials section with gradient background
+- 📈 "Your Path to Professional Growth" section
+- 🏷️ Trusted brands marquee animation
+- 🔐 Sign In & Register auth pages
+- 📱 Fully responsive — mobile, tablet, and desktop
+
+---
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 18+
+- npm
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/ashrafalve/bytespace.git
+cd bytespace
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+bytespace/
+├── app/
+│   ├── components/          # Reusable UI components
+│   │   ├── Navbar.tsx
+│   │   ├── HeroSection.tsx
+│   │   ├── TrustedBrands.tsx
+│   │   ├── CoursesSection.tsx
+│   │   ├── GrowthSection.tsx
+│   │   ├── TestimonialsSection.tsx
+│   │   ├── CTASection.tsx
+│   │   └── Footer.tsx
+│   ├── login/               # Sign In page
+│   ├── register/            # Register page
+│   ├── globals.css          # Global styles & animations
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+│   ├── assets/              # Decorative 3D shape images
+│   ├── icons/               # Brand & social icons
+│   └── images/              # Hero and course images
+└── README.md
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Branch & PR
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Feature branch: `feature/bytespace-landing-page`
+- Pull Request raised against `main` for review
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## Reviewer Notes
+
+All UI work is on the `feature/bytespace-landing-page` branch with a PR open against `main`. The live Vercel deployment is connected to `main` and reflects all latest changes.
