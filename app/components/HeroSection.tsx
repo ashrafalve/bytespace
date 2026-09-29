@@ -110,6 +110,7 @@ export default function HeroSection() {
           style={{ gap: "16px", maxWidth: "1100px", width: "100%" }}
         >
           <p
+            className="hero-subtitle"
             style={{
               fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
@@ -220,8 +221,7 @@ export default function HeroSection() {
             Search
           </button>
         </div>
-
-        {/* Hero Visual Area: Main Student Image + 3 Floating Cards positioned per home/index.html */}
+        {/* Hero Visual Area: Main Student Image + 3 Floating Cards */}
         <div
           className="relative w-full flex justify-center items-end"
           style={{
@@ -237,19 +237,19 @@ export default function HeroSection() {
             className="hero-image-slide-up"
             style={{
               position: "relative",
-              width: "clamp(220px, 40vw, 578px)",
-              height: "clamp(220px, 40vw, 541px)",
+              width: "clamp(220px, 42vw, 578px)",
+              height: "clamp(206px, 39.3vw, 541px)",
               zIndex: 10,
               marginBottom: "0px",
               filter:
-                "drop-shadow(51px 73px 72px rgba(0,0,0,0.13)) drop-shadow(25px 37px 36px rgba(0,0,0,0.1))",
+                "drop-shadow(30px 40px 40px rgba(0,0,0,0.12))",
             }}
           >
             <Image
               src="/images/Image.png"
               alt="Student with laptop"
               fill
-              sizes="(max-width: 768px) 70vw, 578px"
+              sizes="(max-width: 768px) 78vw, 578px"
               className="object-contain object-bottom"
               priority
             />
@@ -260,16 +260,16 @@ export default function HeroSection() {
             className="floating-card hero-card-1"
             style={{
               position: "absolute",
-              left: "clamp(40px, 12vw, calc(50% - 150px))",
-              top: "clamp(60px, 10vw, 150px)",
-              width: "clamp(150px, 18vw, 208px)",
+              left: "clamp(4px, calc(50% - 24vw), calc(50% - 290px))",
+              top: "clamp(10px, 8vw, 150px)",
+              width: "clamp(112px, 16vw, 208px)",
               backgroundColor: "#FFFFFF",
-              borderRadius: "14px",
-              padding: "8px 12px",
+              borderRadius: "clamp(8px, 1.2vw, 14px)",
+              padding: "clamp(4px, 0.9vw, 8px) clamp(6px, 1.2vw, 12px)",
               zIndex: 20,
               display: "flex",
               flexDirection: "column",
-              gap: "2px",
+              gap: "clamp(1px, 0.3vw, 2px)",
               boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
               backdropFilter: "blur(10px)",
             }}
@@ -277,8 +277,8 @@ export default function HeroSection() {
             <p
               style={{
                 fontFamily: "'Poppins', sans-serif",
-                fontWeight: 500,
-                fontSize: "clamp(12px, 1.3vw, 15px)",
+                fontWeight: 600,
+                fontSize: "clamp(9px, 1.2vw, 15px)",
                 lineHeight: "120%",
                 color: "#242528",
                 margin: 0,
@@ -286,10 +286,10 @@ export default function HeroSection() {
             >
               UI/UX Design
             </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "nowrap" }}>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(10px, 1vw, 11px)", color: "#82868E", whiteSpace: "nowrap" }}>200 Courses</span>
-              <span style={{ color: "#82868E", fontSize: "9px" }}>•</span>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(10px, 1vw, 11px)", color: "#82868E", whiteSpace: "nowrap" }}>1000+ Students</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "clamp(2px, 0.4vw, 4px)", flexWrap: "nowrap" }}>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(7px, 0.9vw, 11px)", color: "#82868E", whiteSpace: "nowrap" }}>200 Courses</span>
+              <span style={{ color: "#82868E", fontSize: "clamp(6px, 0.8vw, 9px)" }}>•</span>
+              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "clamp(7px, 0.9vw, 11px)", color: "#82868E", whiteSpace: "nowrap" }}>1000+ Students</span>
             </div>
           </div>
 
@@ -298,16 +298,16 @@ export default function HeroSection() {
             className="floating-card hero-card-2"
             style={{
               position: "absolute",
-              right: "clamp(40px, 12vw, calc(50% - 140px))",
-              top: "clamp(30px, 8vw, 130px)",
-              width: "clamp(160px, 20vw, 232px)",
+              right: "clamp(4px, calc(50% - 24vw), calc(50% - 280px))",
+              top: "clamp(8px, 6vw, 130px)",
+              width: "clamp(105px, 17vw, 232px)",
               backgroundColor: "#FFFFFF",
-              borderRadius: "16px",
-              padding: "clamp(10px, 1.5vw, 16px)",
+              borderRadius: "clamp(8px, 1.3vw, 16px)",
+              padding: "clamp(6px, 1.1vw, 16px)",
               zIndex: 20,
               display: "flex",
               flexDirection: "column",
-              gap: "8px",
+              gap: "clamp(3px, 0.6vw, 8px)",
               boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
               backdropFilter: "blur(10px)",
             }}
@@ -316,7 +316,7 @@ export default function HeroSection() {
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 500,
-                fontSize: "clamp(11px, 1.2vw, 14px)",
+                fontSize: "clamp(8.5px, 1.1vw, 14px)",
                 lineHeight: "120%",
                 color: "#242528",
                 margin: 0,
@@ -328,7 +328,7 @@ export default function HeroSection() {
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
-                fontSize: "clamp(24px, 4vw, 48px)",
+                fontSize: "clamp(16px, 3.2vw, 48px)",
                 lineHeight: "120%",
                 letterSpacing: "-0.01em",
                 color: "#242528",
@@ -340,7 +340,7 @@ export default function HeroSection() {
             <div
               style={{
                 width: "100%",
-                height: "8px",
+                height: "clamp(4px, 0.6vw, 8px)",
                 backgroundColor: "#F6F6F6",
                 borderRadius: "24px",
                 overflow: "hidden",
@@ -349,7 +349,7 @@ export default function HeroSection() {
               <div
                 style={{
                   width: "55%",
-                  height: "8px",
+                  height: "100%",
                   backgroundColor: "#D4FB20",
                   borderRadius: "24px",
                 }}
@@ -362,27 +362,27 @@ export default function HeroSection() {
             className="floating-card hero-card-3"
             style={{
               position: "absolute",
-              left: "clamp(20px, 10vw, calc(50% - 220px))",
-              bottom: "clamp(10px, 4vw, 35px)",
-              width: "clamp(190px, 22vw, 258px)",
+              left: "clamp(4px, calc(50% - 26vw), calc(50% - 330px))",
+              bottom: "clamp(8px, 3vw, 35px)",
+              width: "clamp(128px, 19vw, 258px)",
               backgroundColor: "#FFFFFF",
-              borderRadius: "16px",
-              padding: "clamp(10px, 1.5vw, 16px)",
+              borderRadius: "clamp(8px, 1.3vw, 16px)",
+              padding: "clamp(6px, 1.1vw, 16px)",
               zIndex: 25,
               display: "flex",
               flexDirection: "column",
-              gap: "8px",
+              gap: "clamp(3px, 0.6vw, 8px)",
               boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
               backdropFilter: "blur(10px)",
             }}
           >
-            <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
-              <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: "clamp(13px, 1.3vw, 16px)", lineHeight: "120%", color: "#242528", margin: 0 }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "clamp(1px, 0.2vw, 2px)" }}>
+              <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: "clamp(9px, 1.2vw, 16px)", lineHeight: "120%", color: "#242528", margin: 0 }}>
                 Happy Students
               </p>
-              <div style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "12px", color: "#242528" }}>4.5 (240)</span>
-                <span style={{ color: "#CBFC01", fontSize: "14px", lineHeight: 1 }}>★</span>
+              <div style={{ display: "flex", alignItems: "center", gap: "clamp(2px, 0.3vw, 4px)" }}>
+                <span style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 400, fontSize: "clamp(7.5px, 0.9vw, 12px)", color: "#242528" }}>4.5 (240)</span>
+                <span style={{ color: "#CBFC01", fontSize: "clamp(9px, 1.1vw, 14px)", lineHeight: 1 }}>★</span>
               </div>
             </div>
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -393,11 +393,11 @@ export default function HeroSection() {
                   src={src}
                   alt=""
                   style={{
-                    width: "32px",
-                    height: "32px",
+                    width: "clamp(16px, 2.2vw, 32px)",
+                    height: "clamp(16px, 2.2vw, 32px)",
                     borderRadius: "50%",
-                    border: "2px solid #FFFFFF",
-                    marginLeft: i === 0 ? "0" : "-10px",
+                    border: "clamp(1px, 0.15vw, 2px) solid #FFFFFF",
+                    marginLeft: i === 0 ? "0" : "clamp(-5px, -0.7vw, -10px)",
                     objectFit: "cover",
                     position: "relative",
                     zIndex: 10 - i,
@@ -406,18 +406,18 @@ export default function HeroSection() {
               ))}
               <div
                 style={{
-                  width: "32px",
-                  height: "32px",
+                  width: "clamp(16px, 2.2vw, 32px)",
+                  height: "clamp(16px, 2.2vw, 32px)",
                   borderRadius: "50%",
                   backgroundColor: "#D4FB20",
-                  border: "2px solid #FFFFFF",
-                  marginLeft: "-10px",
+                  border: "clamp(1px, 0.15vw, 2px) solid #FFFFFF",
+                  marginLeft: "clamp(-5px, -0.7vw, -10px)",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                   fontFamily: "'Poppins', sans-serif",
                   fontWeight: 700,
-                  fontSize: "10px",
+                  fontSize: "clamp(6px, 0.75vw, 10px)",
                   color: "#242528",
                   flexShrink: 0,
                   zIndex: 3,
@@ -429,114 +429,6 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-
-        {/* ── Mobile-only card strip ── */}
-        <div
-          className="hero-cards-mobile"
-          style={{
-            display: "none", /* overridden to flex on mobile via CSS */
-            flexWrap: "wrap",
-            gap: "10px",
-            justifyContent: "center",
-            width: "100%",
-            paddingTop: "12px",
-            paddingBottom: "4px",
-          }}
-        >
-          {/* Card A: UI/UX Design */}
-          <div
-            style={{
-              backgroundColor: "#FFFFFF",
-              borderRadius: "12px",
-              padding: "10px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "3px",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.10)",
-              minWidth: "140px",
-              flex: "1 1 140px",
-              maxWidth: "180px",
-            }}
-          >
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "13px", color: "#242528", margin: 0 }}>
-              UI/UX Design
-            </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "4px", flexWrap: "wrap" }}>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", color: "#82868E" }}>200 Courses</span>
-              <span style={{ color: "#82868E", fontSize: "8px" }}>•</span>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "10px", color: "#82868E" }}>1000+ Students</span>
-            </div>
-          </div>
-
-          {/* Card B: Learning Progress */}
-          <div
-            style={{
-              backgroundColor: "#FFFFFF",
-              borderRadius: "12px",
-              padding: "10px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "4px",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.10)",
-              minWidth: "130px",
-              flex: "1 1 130px",
-              maxWidth: "170px",
-            }}
-          >
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 500, fontSize: "11px", color: "#242528", margin: 0 }}>
-              Learning Progress
-            </p>
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "22px", lineHeight: 1, color: "#242528", margin: 0 }}>
-              55%
-            </p>
-            <div style={{ width: "100%", height: "6px", backgroundColor: "#F0F0F0", borderRadius: "24px", overflow: "hidden" }}>
-              <div style={{ width: "55%", height: "6px", backgroundColor: "#D4FB20", borderRadius: "24px" }} />
-            </div>
-          </div>
-
-          {/* Card C: Happy Students */}
-          <div
-            style={{
-              backgroundColor: "#FFFFFF",
-              borderRadius: "12px",
-              padding: "10px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: "5px",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.10)",
-              minWidth: "130px",
-              flex: "1 1 130px",
-              maxWidth: "170px",
-            }}
-          >
-            <p style={{ fontFamily: "'Poppins', sans-serif", fontWeight: 600, fontSize: "12px", color: "#242528", margin: 0 }}>
-              Happy Students
-            </p>
-            <div style={{ display: "flex", alignItems: "center", gap: "3px" }}>
-              <span style={{ fontFamily: "'Poppins', sans-serif", fontSize: "11px", color: "#242528" }}>4.5 (240)</span>
-              <span style={{ color: "#CBFC01", fontSize: "13px", lineHeight: 1 }}>★</span>
-            </div>
-            <div style={{ display: "flex", alignItems: "center" }}>
-              {[
-                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=28&h=28&fit=crop&crop=face&q=80",
-                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=28&h=28&fit=crop&crop=face&q=80",
-                "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=28&h=28&fit=crop&crop=face&q=80",
-              ].map((src, i) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  key={i}
-                  src={src}
-                  alt=""
-                  style={{ width: "24px", height: "24px", borderRadius: "50%", border: "2px solid #fff", marginLeft: i === 0 ? 0 : "-7px", objectFit: "cover", position: "relative", zIndex: 3 - i }}
-                />
-              ))}
-              <div style={{ width: "24px", height: "24px", borderRadius: "50%", backgroundColor: "#D4FB20", border: "2px solid #fff", marginLeft: "-7px", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Poppins', sans-serif", fontWeight: 700, fontSize: "8px", color: "#242528", position: "relative", zIndex: 0 }}>
-                2K+
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );

@@ -34,7 +34,7 @@ export default function TestimonialsSection() {
       className="w-full relative overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #dce8ff 0%, #e8f5e9 35%, #f5ffe0 65%, #e8f0ff 100%)",
+          "linear-gradient(135deg, #c8d8f8 0%, #d6e8ff 25%, #e4f4d8 55%, #eafcd4 80%, #f2ffe8 100%)",
         padding: "clamp(48px, 8vw, 80px) 0",
       }}
       id="testimonials"

@@ -36,31 +36,33 @@ body {
 }
 
 @media (max-width: 640px) {
-  /* Hide only decorative asset shapes */
+  /* Hide only decorative 3D asset shapes */
   .hero-deco { display: none !important; }
   .cta-deco { display: none !important; }
-
-  /* Hide hero floating cards from their absolute positions on mobile */
-  .hero-card-1, .hero-card-2, .hero-card-3 { display: none !important; }
-
-  /* Growth section: keep growth-card hidden (shown in mobile strip instead) */
-  .growth-card { display: none !important; }
 
   /* Growth rows stack vertically */
   .growth-row { flex-direction: column !important; align-items: center !important; }
   .growth-row > div { width: 100% !important; flex: none !important; min-width: 0 !important; max-width: 100% !important; }
-
-  /* Mobile hero cards strip — shown instead of absolute-positioned cards */
-  .hero-cards-mobile { display: flex !important; }
-
-  /* Mobile growth cards strip */
-  .growth-cards-mobile { display: flex !important; }
 }
 
-@media (min-width: 641px) {
-  /* On desktop, hide the mobile-only strips */
-  .hero-cards-mobile { display: none !important; }
-  .growth-cards-mobile { display: none !important; }
+/* Hero floating card nudges — desktop only */
+@media (min-width: 1024px) {
+  .hero-card-1 { left: clamp(4px, calc(50% - 24vw + 108px), calc(50% - 182px)) !important; }
+  .hero-card-2 { right: clamp(4px, calc(50% - 24vw + 148px), calc(50% - 132px)) !important; }
+  .hero-card-3 { left: clamp(4px, calc(50% - 26vw + 88px), calc(50% - 242px)) !important; }
+}
+
+/* Hero subtitle — keep on a single line on desktop */
+@media (min-width: 769px) {
+  .hero-subtitle {
+    max-width: 100% !important;
+    font-size: clamp(11px, 1.05vw, 19px) !important;
+    white-space: nowrap;
+  }
+
+  .hero-subtitle + h1 {
+    margin-top: 10px;
+  }
 }
 
 img {
@@ -129,4 +131,120 @@ select {
 .hero-image-slide-up {
   animation: hero-slide-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 0.15s;
+}
+
+/* ===== HERO FLOATING CARD SLIDE-IN ANIMATIONS ===== */
+@keyframes hero-slide-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-70px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(70px);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-card-1 {
+  animation: hero-slide-in-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
+}
+
+.hero-card-2 {
+  animation: hero-slide-in-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.45s;
+}
+
+.hero-card-3 {
+  animation: hero-slide-in-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.6s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image-slide-up,
+  .hero-card-1,
+  .hero-card-2,
+  .hero-card-3 {
+    animation: none;
+  }
+}
+
+/* ===== GROWTH SECTION SCROLL-TRIGGERED ANIMATIONS ===== */
+@keyframes growth-fade-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.88);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.growth-row.reveal-ready:not(.is-in-view) .growth-deco,
+.growth-row.reveal-ready:not(.is-in-view) .growth-image,
+.growth-row.reveal-ready:not(.is-in-view) .growth-card {
+  opacity: 0;
+}
+
+.growth-row.is-in-view .growth-deco {
+  animation: growth-fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.1s;
+}
+
+.growth-row.is-in-view .growth-image {
+  animation: hero-slide-up 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.15s;
+}
+
+.growth-row.is-in-view .growth-card-1,
+.growth-row.is-in-view .growth-card-3 {
+  animation: hero-slide-in-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.25s;
+}
+
+.growth-row.is-in-view .growth-card-4 {
+  animation: hero-slide-in-left 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.4s;
+}
+
+.growth-row.is-in-view .growth-card-2,
+.growth-row.is-in-view .growth-card-5 {
+  animation: hero-slide-in-right 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .growth-row.reveal-ready:not(.is-in-view) .growth-deco,
+  .growth-row.reveal-ready:not(.is-in-view) .growth-image,
+  .growth-row.reveal-ready:not(.is-in-view) .growth-card {
+    opacity: 1;
+  }
+
+  .growth-deco,
+  .growth-image,
+  .growth-card-1,
+  .growth-card-2,
+  .growth-card-3,
+  .growth-card-4,
+  .growth-card-5 {
+    animation: none;
+  }
 }
