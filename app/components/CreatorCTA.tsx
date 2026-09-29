@@ -7,10 +7,17 @@ export default function CreatorCTA() {
   return (
     <section
       className="relative w-full overflow-hidden"
-      style={{ backgroundColor: "#003BE2", padding: "80px 0" }}
+      style={{
+        backgroundColor: "#003BE2",
+        padding: "clamp(80px, 10vw, 140px) 0",
+        minHeight: "clamp(480px, 50vw, 560px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
       id="creator-cta"
     >
-      {/* Grid overlay â€” 120px, 12% opacity */}
+      {/* Grid overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -21,133 +28,107 @@ export default function CreatorCTA() {
         }}
       />
 
-      {/* Decorative shapes */}
+      {/* Decorative 3D Shapes per Reference Image */}
 
-      {/* Yellow squiggle â€” top-left */}
+      {/* 1. Top-Left Outer Corner: Lime Spring Frame.png (positioned higher up into top corner) */}
       <div
-        className="absolute pointer-events-none"
-        style={{ left: "40px", top: "20px", width: "100px", height: "120px" }}
-      >
-        <Image
-          src="/images/Frame.png"
-          alt=""
-          fill
-          sizes="100px"
-          className="object-contain"
-        />
-      </div>
-
-      {/* White squiggle â€” top-left-inner */}
-      <div
-        className="absolute pointer-events-none"
-        style={{ left: "180px", top: "30px", width: "80px", height: "100px" }}
-      >
-        <Image
-          src="/images/Frame (1).png"
-          alt=""
-          fill
-          sizes="80px"
-          className="object-contain"
-        />
-      </div>
-
-      {/* White cone â€” top-right-center */}
-      <div
-        className="absolute pointer-events-none"
-        style={{ right: "360px", top: "10px", width: "100px", height: "120px" }}
-      >
-        <Image
-          src="/images/Cone.png"
-          alt=""
-          fill
-          sizes="100px"
-          className="object-contain"
-        />
-      </div>
-
-      {/* Green cone â€” far top-right */}
-      <div
-        className="absolute pointer-events-none"
-        style={{ right: "100px", top: "-10px", width: "120px", height: "160px" }}
-      >
-        <Image
-          src="/images/Cone (1).png"
-          alt=""
-          fill
-          sizes="120px"
-          className="object-contain"
-        />
-      </div>
-
-      {/* White cylinder/torus â€” top-right */}
-      <div
-        className="absolute pointer-events-none"
-        style={{ right: "20px", top: "20px", width: "100px", height: "120px", opacity: 0.8 }}
-      >
-        <Image
-          src="/images/Cone (2).png"
-          alt=""
-          fill
-          sizes="100px"
-          className="object-contain"
-        />
-      </div>
-
-      {/* Bottom-left yellow loop */}
-      <div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none cta-deco"
         style={{
-          left: "30px",
-          bottom: "20px",
-          width: "100px",
-          height: "120px",
-          transform: "rotate(30deg) scaleY(-1)",
+          left: "-50px",
+          top: "-40px",
+          width: "clamp(120px, 16vw, 220px)",
+          height: "clamp(120px, 16vw, 220px)",
+          zIndex: 5,
         }}
       >
-        <Image
-          src="/images/Frame.png"
-          alt=""
-          fill
-          sizes="100px"
-          className="object-contain"
-        />
+        <Image src="/assets/Frame.png" alt="" fill sizes="220px" className="object-contain object-left-top" />
       </div>
 
-      {/* Bottom-right white squiggle */}
+      {/* 2. Top-Left Inner: White Squiggle mask-group.png */}
       <div
-        className="absolute pointer-events-none"
-        style={{ right: "60px", bottom: "20px", width: "80px", height: "100px" }}
-      >
-        <Image
-          src="/images/Mask Group.png"
-          alt=""
-          fill
-          sizes="80px"
-          className="object-contain"
-        />
-      </div>
-
-      {/* White cone bottom-left-inner */}
-      <div
-        className="absolute pointer-events-none"
+        className="absolute pointer-events-none cta-deco"
         style={{
-          left: "220px",
-          bottom: "20px",
-          width: "70px",
-          height: "90px",
-          opacity: 0.6,
+          left: "clamp(120px, 14vw, 200px)",
+          top: "12%",
+          width: "clamp(80px, 11vw, 150px)",
+          height: "clamp(80px, 11vw, 150px)",
+          zIndex: 5,
         }}
       >
-        <Image
-          src="/images/Cone.png"
-          alt=""
-          fill
-          sizes="70px"
-          className="object-contain"
-        />
+        <Image src="/assets/mask-group.png" alt="" fill sizes="150px" className="object-contain" />
       </div>
 
-      {/* Content */}
+      {/* 3. Middle-Left Edge: White Cone Cone copy.png */}
+      <div
+        className="absolute pointer-events-none cta-deco"
+        style={{
+          left: "0px",
+          top: "42%",
+          width: "clamp(80px, 11vw, 150px)",
+          height: "clamp(80px, 11vw, 150px)",
+          zIndex: 5,
+        }}
+      >
+        <Image src="/assets/Cone copy.png" alt="" fill sizes="150px" className="object-contain object-left" />
+      </div>
+
+      {/* 4. Bottom-Left Corner: Lime Torus Ring mask-group-2.png (positioned lower) */}
+      <div
+        className="absolute pointer-events-none cta-deco"
+        style={{
+          left: "clamp(20px, 4vw, 50px)",
+          bottom: "-90px",
+          width: "clamp(130px, 16vw, 220px)",
+          height: "clamp(130px, 16vw, 220px)",
+          zIndex: 5,
+        }}
+      >
+        <Image src="/assets/mask-group-2.png" alt="" fill sizes="220px" className="object-contain" />
+      </div>
+
+      {/* 5. Top-Right Inner: White Squiggle mask-group-3.png */}
+      <div
+        className="absolute pointer-events-none cta-deco"
+        style={{
+          right: "clamp(140px, 16vw, 240px)",
+          top: "10%",
+          width: "clamp(90px, 12vw, 160px)",
+          height: "clamp(90px, 12vw, 160px)",
+          zIndex: 5,
+        }}
+      >
+        <Image src="/assets/mask-group-3.png" alt="" fill sizes="160px" className="object-contain" />
+      </div>
+
+      {/* 6. Top-Right Outer Edge: White 3D Cylinder Mask Group copy.png */}
+      <div
+        className="absolute pointer-events-none cta-deco"
+        style={{
+          right: "-20px",
+          top: "10%",
+          width: "clamp(130px, 17vw, 240px)",
+          height: "clamp(150px, 19vw, 270px)",
+          zIndex: 5,
+        }}
+      >
+        <Image src="/assets/Mask Group copy.png" alt="" fill sizes="270px" className="object-contain object-right" />
+      </div>
+
+      {/* 7. Bottom-Right Corner: Lime Spring Frame.png (positioned lower) */}
+      <div
+        className="absolute pointer-events-none cta-deco"
+        style={{
+          right: "clamp(20px, 4vw, 50px)",
+          bottom: "-90px",
+          width: "clamp(130px, 16vw, 220px)",
+          height: "clamp(130px, 16vw, 220px)",
+          zIndex: 5,
+        }}
+      >
+        <Image src="/assets/Frame.png" alt="" fill sizes="220px" className="object-contain" />
+      </div>
+
+      {/* Center Content */}
       <div
         className="relative"
         style={{
@@ -156,16 +137,16 @@ export default function CreatorCTA() {
           flexDirection: "column",
           alignItems: "center",
           textAlign: "center",
-          maxWidth: "720px",
+          maxWidth: "840px",
           margin: "0 auto",
-          padding: "0 24px",
+          padding: "0 clamp(16px, 5vw, 24px)",
         }}
       >
         <h2
           style={{
-            fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+            fontFamily: "'Poppins', sans-serif",
             fontWeight: 600,
-            fontSize: "clamp(1.8rem, 4vw, 3rem)",
+            fontSize: "clamp(2rem, 4.5vw, 3.25rem)",
             lineHeight: "120%",
             letterSpacing: "-0.01em",
             color: "#FFFFFF",
@@ -179,19 +160,18 @@ export default function CreatorCTA() {
 
         <p
           style={{
-            fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+            fontFamily: "'Poppins', sans-serif",
             fontWeight: 400,
-            fontSize: "16px",
+            fontSize: "clamp(14px, 1.5vw, 16px)",
             lineHeight: "160%",
-            color: "rgba(255,255,255,0.65)",
+            color: "rgba(255,255,255,0.75)",
             marginTop: "20px",
-            maxWidth: "600px",
+            maxWidth: "760px",
           }}
         >
-          Experience the collaboration of numerous creators and an expanding
-          selection of courses. Register now and become a part of a community
-          comprising over 10,000 local and international creators. Utilize our
-          Course Editor, and showcase your expertise by publishing your finest
+          Experience the collaboration of numerous creators and an expanding selection of courses.
+          Register now and become a part of a community comprising over 10,000 local and international
+          creators. Utilize our Course Editor, and showcase your expertise by publishing your finest
           course on the ByteSpace Course Library.
         </p>
 
@@ -199,14 +179,14 @@ export default function CreatorCTA() {
           <button
             id="join-creator-btn"
             style={{
-              marginTop: "40px",
-              padding: "14px 40px",
+              marginTop: "36px",
+              padding: "14px clamp(28px, 4vw, 42px)",
               borderRadius: "24px",
-              backgroundColor: "#D4FB20",
+              backgroundColor: "#CBFC01",
               color: "#242528",
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 500,
-              fontSize: "18px",
+              fontSize: "clamp(15px, 2vw, 18px)",
               lineHeight: "120%",
               border: "none",
               cursor: "pointer",
@@ -214,7 +194,8 @@ export default function CreatorCTA() {
             }}
             onMouseEnter={(e) => {
               (e.currentTarget as HTMLButtonElement).style.transform = "scale(1.05)";
-              (e.currentTarget as HTMLButtonElement).style.boxShadow = "0 8px 24px rgba(0,0,0,0.2)";
+              (e.currentTarget as HTMLButtonElement).style.boxShadow =
+                "0 8px 24px rgba(0,0,0,0.2)";
             }}
             onMouseLeave={(e) => {
               (e.currentTarget as HTMLButtonElement).style.transform = "scale(1)";
@@ -228,4 +209,3 @@ export default function CreatorCTA() {
     </section>
   );
 }
-

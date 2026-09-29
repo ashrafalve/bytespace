@@ -1,4 +1,4 @@
-﻿export default function TestimonialsSection() {
+export default function TestimonialsSection() {
   const testimonials = [
     {
       id: 1,
@@ -35,7 +35,7 @@
       style={{
         background:
           "linear-gradient(135deg, #dce8ff 0%, #e8f5e9 35%, #f5ffe0 65%, #e8f0ff 100%)",
-        padding: "80px 0",
+        padding: "clamp(48px, 8vw, 80px) 0",
       }}
       id="testimonials"
     >
@@ -43,8 +43,7 @@
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          padding: "0 120px",
-          boxSizing: "content-box",
+          padding: "0 clamp(16px, 5vw, 80px)",
         }}
       >
         {/* Header row */}
@@ -52,18 +51,19 @@
           style={{
             display: "flex",
             flexDirection: "row",
-            gap: "96px",
-            marginBottom: "56px",
+            gap: "clamp(24px, 6vw, 96px)",
+            marginBottom: "clamp(32px, 5vw, 56px)",
             alignItems: "flex-start",
+            flexWrap: "wrap",
           }}
         >
           {/* Left: headline */}
           <div style={{ flex: "0 0 auto" }}>
             <h2
               style={{
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
-                fontSize: "44px",
+                fontSize: "clamp(1.5rem, 4vw, 2.75rem)",
                 lineHeight: "120%",
                 letterSpacing: "-0.01em",
                 color: "#040819",
@@ -77,32 +77,31 @@
           </div>
 
           {/* Right: description */}
-          <div style={{ flex: 1, display: "flex", alignItems: "center" }}>
+          <div style={{ flex: 1, minWidth: "240px", display: "flex", alignItems: "center" }}>
             <p
               style={{
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 400,
-                fontSize: "16px",
+                fontSize: "clamp(13px, 1.5vw, 16px)",
                 lineHeight: "160%",
                 color: "#82868E",
                 margin: 0,
               }}
             >
-              At ByteSpace, our vibrant community of learners and creators is at
-              the heart of what we do. Hear directly from those who have
-              experienced the transformative journey of learning and creating on
-              our platform. Explore testimonials that reflect the diverse
+              At ByteSpace, our vibrant community of learners and creators is at the heart of what
+              we do. Hear directly from those who have experienced the transformative journey of
+              learning and creating on our platform. Explore testimonials that reflect the diverse
               perspectives of enthusiastic learners and accomplished creators.
             </p>
           </div>
         </div>
 
-        {/* Testimonial cards â€” 3-col grid */}
+        {/* Testimonial cards — responsive grid */}
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
-            gap: "24px",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: "clamp(16px, 2.5vw, 24px)",
           }}
         >
           {testimonials.map((t) => (
@@ -112,7 +111,7 @@
               style={{
                 backgroundColor: "#FFFFFF",
                 borderRadius: "24px",
-                padding: "28px",
+                padding: "clamp(20px, 2.5vw, 28px)",
                 boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
               }}
             >
@@ -154,7 +153,7 @@
               {/* Role */}
               <p
                 style={{
-                  fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                  fontFamily: "'Poppins', sans-serif",
                   fontWeight: 500,
                   fontSize: "13px",
                   lineHeight: "120%",
@@ -168,7 +167,7 @@
               {/* Quote */}
               <p
                 style={{
-                  fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                  fontFamily: "'Poppins', sans-serif",
                   fontWeight: 400,
                   fontSize: "14px",
                   lineHeight: "160%",
@@ -185,4 +184,3 @@
     </section>
   );
 }
-

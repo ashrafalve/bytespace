@@ -31,8 +31,7 @@ const COURSES = [
     rating: 4.5,
     level: "Beginner",
     price: 25,
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop&q=80",
     lessons: 17,
     hours: "2 hours 16 mins",
     comments: 59,
@@ -44,8 +43,7 @@ const COURSES = [
     rating: 4.5,
     level: "Beginner",
     price: 25,
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop&q=80",
     lessons: 17,
     hours: "2 hours 16 mins",
     comments: 59,
@@ -57,47 +55,43 @@ const COURSES = [
     rating: 4.5,
     level: "Beginner",
     price: 25,
-    image:
-      "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=400&fit=crop&q=80",
     lessons: 17,
     hours: "2 hours 16 mins",
     comments: 59,
   },
   {
     id: 4,
-    title: "Balancing Productivity an...",
+    title: "Balancing Productivity and Self-Care",
     author: "purepearl studio",
     rating: 4.5,
     level: "Beginner",
     price: 25,
-    image:
-      "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=600&h=400&fit=crop&q=80",
     lessons: 17,
     hours: "2 hours 16 mins",
     comments: 59,
   },
   {
     id: 5,
-    title: "Mastering Money Manage...",
+    title: "Mastering Money Management",
     author: "purepearl studio",
     rating: 4.5,
     level: "Beginner",
     price: 25,
-    image:
-      "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop&q=80",
     lessons: 17,
     hours: "2 hours 16 mins",
     comments: 59,
   },
   {
     id: 6,
-    title: "From Idea to Startup Succ...",
+    title: "From Idea to Startup Success",
     author: "purepearl studio",
     rating: 4.5,
     level: "Beginner",
     price: 25,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80",
     lessons: 17,
     hours: "2 hours 16 mins",
     comments: 59,
@@ -125,32 +119,35 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
     <div
       id={`course-card-${course.id}`}
       style={{
-        width: "373px",
-        minHeight: "384px",
+        width: "100%",
+        height: "100%",
         backgroundColor: "#FFFFFF",
         border: "1px solid #CED0D3",
         borderRadius: "24px",
         overflow: "hidden",
-        flexShrink: 0,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between",
       }}
     >
       {/* Thumbnail */}
       <div
         style={{
           position: "relative",
-          width: "341px",
-          height: "195px",
+          width: "calc(100% - 32px)",
+          paddingTop: "56.25%",
           margin: "16px 16px 0 16px",
           borderRadius: "12px",
           overflow: "hidden",
           backgroundColor: "#222",
+          flexShrink: 0,
         }}
       >
         <Image
           src={course.image}
           alt={course.title}
           fill
-          sizes="341px"
+          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 373px"
           className="object-cover"
         />
         {/* Frosted glass meta pills */}
@@ -160,63 +157,66 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
             bottom: "13px",
             left: "13px",
             display: "flex",
-            gap: "12px",
+            gap: "8px",
+            flexWrap: "wrap",
           }}
         >
-          {[
-            `${course.lessons} Lessons`,
-            course.hours,
-            `${course.comments} Comments`,
-          ].map((label) => (
-            <div
-              key={label}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "6px 12px",
-                backgroundColor: "rgba(246,246,246,0.6)",
-                backdropFilter: "blur(4px)",
-                borderRadius: "24px",
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
-                fontWeight: 500,
-                fontSize: "12px",
-                lineHeight: "120%",
-                color: "#4F4F4F",
-                whiteSpace: "nowrap",
-              }}
-            >
-              {label}
-            </div>
-          ))}
+          {[`${course.lessons} Lessons`, course.hours, `${course.comments} Comments`].map(
+            (label) => (
+              <div
+                key={label}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: "6px 10px",
+                  backgroundColor: "rgba(246,246,246,0.6)",
+                  backdropFilter: "blur(4px)",
+                  borderRadius: "24px",
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "11px",
+                  lineHeight: "120%",
+                  color: "#4F4F4F",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {label}
+              </div>
+            )
+          )}
         </div>
       </div>
 
       {/* Card body */}
       <div
         style={{
-          padding: "16px 16px 16px 16px",
+          padding: "16px",
           display: "flex",
           flexDirection: "column",
-          gap: "16px",
+          gap: "14px",
+          flex: 1,
+          justifyContent: "space-between",
         }}
       >
         {/* Title + author */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "0px" }}>
-          <div
-            style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}
-          >
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
             <h3
               style={{
                 fontFamily: "'Poppins', sans-serif",
                 fontWeight: 600,
-                fontSize: "20px",
-                lineHeight: "120%",
+                fontSize: "18px",
+                lineHeight: "130%",
                 letterSpacing: "-0.01em",
                 color: "#000000",
                 margin: 0,
                 flex: 1,
+                overflow: "hidden",
+                textOverflow: "ellipsis",
+                whiteSpace: "nowrap",
               }}
+              title={course.title}
             >
               {course.title}
             </h3>
@@ -225,7 +225,7 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
                 display: "flex",
                 alignItems: "center",
                 gap: "2px",
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontSize: "12px",
                 color: "#82868E",
                 flexShrink: 0,
@@ -233,20 +233,14 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
               }}
             >
               {course.rating}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                fill="#CED0D3"
-                viewBox="0 0 24 24"
-              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="#CED0D3" viewBox="0 0 24 24">
                 <path d="M12 .587l3.668 7.568L24 9.423l-6 5.847 1.417 8.253L12 19.022l-7.417 4.501L6 15.27 0 9.423l8.332-1.268z" />
               </svg>
             </span>
           </div>
           <p
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
               fontSize: "12px",
               lineHeight: "160%",
@@ -259,8 +253,7 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
         </div>
 
         {/* Level + avatars */}
-        <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          {/* Level badge */}
+        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "12px" }}>
           <div
             style={{
               display: "flex",
@@ -271,20 +264,14 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
               borderRadius: "24px",
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="none"
-              viewBox="0 0 24 24"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
               <rect x="2" y="12" width="5" height="9" rx="1" fill="#4B4C53" />
               <rect x="9" y="7" width="5" height="14" rx="1" fill="#4B4C53" />
               <rect x="16" y="3" width="5" height="18" rx="1" fill="#4B4C53" />
             </svg>
             <span
               style={{
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 500,
                 fontSize: "12px",
                 lineHeight: "120%",
@@ -324,7 +311,7 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 700,
                 fontSize: "8px",
                 color: "#242528",
@@ -349,7 +336,7 @@ function CourseCard({ course }: { course: (typeof COURSES)[0] }) {
           </span>
           <span
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
               fontSize: "12px",
               color: "#82868E",
@@ -370,13 +357,12 @@ export default function CoursesSection() {
   const hasMore = CATEGORIES.length > 17;
 
   return (
-    <section className="w-full bg-white py-20" id="courses">
+    <section className="w-full bg-white" style={{ padding: "clamp(40px, 8vw, 80px) 0" }} id="courses">
       <div
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          padding: "0 120px",
-          boxSizing: "content-box",
+          padding: "0 clamp(16px, 5vw, 80px)",
         }}
       >
         {/* Heading */}
@@ -391,9 +377,9 @@ export default function CoursesSection() {
         >
           <h2
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 600,
-              fontSize: "44px",
+              fontSize: "clamp(1.75rem, 4vw, 2.75rem)",
               lineHeight: "120%",
               letterSpacing: "-0.01em",
               textAlign: "center",
@@ -407,20 +393,19 @@ export default function CoursesSection() {
           </h2>
           <p
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
-              fontSize: "18px",
+              fontSize: "clamp(14px, 2vw, 18px)",
               lineHeight: "160%",
               textAlign: "center",
               color: "#82868E",
               margin: 0,
-              maxWidth: "917px",
+              maxWidth: "700px",
             }}
           >
-            At Bytespace Courses, we bring you closer to life-changing
-            knowledge. Explore a variety of courses across different fields,
-            from technology to the arts, and make a difference in your career
-            and life.
+            At Bytespace Courses, we bring you closer to life-changing knowledge. Explore a variety
+            of courses across different fields, from technology to the arts, and make a difference in
+            your career and life.
           </p>
         </div>
 
@@ -442,15 +427,16 @@ export default function CoursesSection() {
               style={{
                 padding: "6px 16px",
                 borderRadius: "24px",
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: active === cat ? 500 : 400,
-                fontSize: "16px",
+                fontSize: "clamp(12px, 1.5vw, 16px)",
                 lineHeight: "160%",
                 border: active === cat ? "none" : "1px solid #CED0D3",
                 backgroundColor: active === cat ? "#D4FB20" : "#FFFFFF",
                 color: active === cat ? "#040819" : "#4B4C53",
                 cursor: "pointer",
                 transition: "all 0.2s",
+                whiteSpace: "nowrap",
               }}
             >
               {cat}
@@ -461,9 +447,9 @@ export default function CoursesSection() {
               style={{
                 padding: "6px 16px",
                 borderRadius: "24px",
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 400,
-                fontSize: "16px",
+                fontSize: "clamp(12px, 1.5vw, 16px)",
                 color: "#003BE2",
                 background: "none",
                 border: "none",
@@ -475,13 +461,13 @@ export default function CoursesSection() {
           )}
         </div>
 
-        {/* Course grid */}
+        {/* Course grid — uniform responsive cards */}
         <div
           style={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "40px",
-            justifyContent: "center",
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "clamp(20px, 3vw, 32px)",
+            width: "100%",
           }}
         >
           {COURSES.map((course) => (
@@ -492,7 +478,7 @@ export default function CoursesSection() {
         {/* Learning Paths */}
         <div
           style={{
-            marginTop: "80px",
+            marginTop: "clamp(48px, 8vw, 80px)",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -501,9 +487,9 @@ export default function CoursesSection() {
         >
           <h2
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 600,
-              fontSize: "36px",
+              fontSize: "clamp(1.5rem, 3.5vw, 2.25rem)",
               lineHeight: "120%",
               letterSpacing: "-0.01em",
               textAlign: "center",
@@ -515,30 +501,27 @@ export default function CoursesSection() {
           </h2>
           <p
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
-              fontSize: "18px",
+              fontSize: "clamp(14px, 2vw, 18px)",
               lineHeight: "160%",
               textAlign: "center",
               color: "#82868E",
               margin: 0,
-              maxWidth: "917px",
+              maxWidth: "700px",
             }}
           >
-            At Bytespace, we believe in empowering individuals through
-            knowledge. Our diverse range of courses spans various fields,
-            ensuring there&apos;s something for everyone. Unleash your potential
-            and explore our carefully curated categories.
+            At Bytespace, we believe in empowering individuals through knowledge. Our diverse range of
+            courses spans various fields, ensuring there&apos;s something for everyone.
           </p>
 
-          {/* Category icon cards — 167x167 white card with light border, lime icon circle, text label inside */}
+          {/* Category icon cards */}
           <div
             style={{
-              display: "flex",
-              gap: "24px",
-              marginTop: "40px",
-              flexWrap: "wrap",
-              justifyContent: "center",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+              gap: "clamp(12px, 2vw, 24px)",
+              marginTop: "32px",
               width: "100%",
             }}
           >
@@ -547,8 +530,7 @@ export default function CoursesSection() {
                 key={path.id}
                 id={`learning-path-${path.label.replace(/\s+/g, "-").toLowerCase()}`}
                 style={{
-                  width: "167px",
-                  height: "167px",
+                  aspectRatio: "1",
                   backgroundColor: "#FFFFFF",
                   border: "1px solid #EAECF0",
                   borderRadius: "20px",
@@ -575,14 +557,14 @@ export default function CoursesSection() {
                 {/* Lime circle badge */}
                 <div
                   style={{
-                    width: "60px",
-                    height: "60px",
+                    width: "clamp(44px, 6vw, 60px)",
+                    height: "clamp(44px, 6vw, 60px)",
                     borderRadius: "50%",
                     backgroundColor: "#D4FB20",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    marginBottom: "14px",
+                    marginBottom: "12px",
                     flexShrink: 0,
                   }}
                 >
@@ -597,16 +579,15 @@ export default function CoursesSection() {
                   </div>
                 </div>
 
-                {/* Category label inside the card */}
+                {/* Category label */}
                 <span
                   style={{
-                    fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                    fontFamily: "'Poppins', sans-serif",
                     fontWeight: 500,
-                    fontSize: "16px",
+                    fontSize: "clamp(12px, 1.5vw, 16px)",
                     lineHeight: "22px",
                     color: "#101828",
                     textAlign: "center",
-                    whiteSpace: "nowrap",
                   }}
                 >
                   {path.label}
@@ -619,4 +600,3 @@ export default function CoursesSection() {
     </section>
   );
 }
-

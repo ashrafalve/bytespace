@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+import Image from "next/image";
 
 const COL1 = ["Featured Courses", "Featured Categories", "Business", "IT", "Design"];
 const COL2 = ["Development", "Marketing", "Photography", "Finance", "Sport"];
@@ -16,24 +16,32 @@ export default function Footer() {
         style={{
           maxWidth: "1200px",
           margin: "0 auto",
-          padding: "64px 120px 40px 120px",
-          boxSizing: "content-box",
+          padding: "clamp(40px, 6vw, 64px) clamp(16px, 5vw, 80px)",
         }}
       >
-        <div style={{ display: "flex", gap: "80px", alignItems: "flex-start" }}>
+        <div
+          style={{
+            display: "flex",
+            gap: "clamp(32px, 6vw, 80px)",
+            alignItems: "flex-start",
+            flexWrap: "wrap",
+          }}
+        >
           {/* Left: brand + newsletter */}
-          <div style={{ flex: "0 0 370px", maxWidth: "370px" }}>
+          <div style={{ flex: "1 1 300px", maxWidth: "400px" }}>
             {/* Logo */}
-            <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "16px" }}>
-              <Image
-                src="/logo.png"
-                alt="ByteSpace Logo"
-                width={29}
-                height={32}
-              />
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+                marginBottom: "16px",
+              }}
+            >
+              <Image src="/logo.png" alt="ByteSpace Logo" width={29} height={32} />
               <span
                 style={{
-                  fontFamily: "'Clash Display', 'Poppins', var(--font-poppins), sans-serif",
+                  fontFamily: "'Clash Display', 'Poppins', sans-serif",
                   fontWeight: 700,
                   fontSize: "24px",
                   lineHeight: "30px",
@@ -47,7 +55,7 @@ export default function Footer() {
             {/* Tagline */}
             <p
               style={{
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 400,
                 fontSize: "14px",
                 lineHeight: "160%",
@@ -56,27 +64,34 @@ export default function Footer() {
                 maxWidth: "320px",
               }}
             >
-              Stay Up to date with our latest features and releases by joining
-              our newsletter.
+              Stay Up to date with our latest features and releases by joining our newsletter.
             </p>
 
             {/* Email input row */}
-            <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "12px",
+                flexWrap: "wrap",
+              }}
+            >
               <input
                 type="email"
                 placeholder="Enter your email"
                 id="newsletter-email"
                 aria-label="Newsletter email"
                 style={{
-                  flex: 1,
+                  flex: "1 1 160px",
                   padding: "12px 24px",
                   borderRadius: "24px",
                   border: "1px solid #CED0D3",
-                  fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                  fontFamily: "'Poppins', sans-serif",
                   fontSize: "14px",
                   color: "#82868E",
                   outline: "none",
                   backgroundColor: "#FFFFFF",
+                  minWidth: "160px",
                 }}
               />
               <button
@@ -86,9 +101,9 @@ export default function Footer() {
                   borderRadius: "24px",
                   backgroundColor: "#D4FB20",
                   color: "#242528",
-                  fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                  fontFamily: "'Poppins', sans-serif",
                   fontWeight: 500,
-                  fontSize: "16px",
+                  fontSize: "15px",
                   lineHeight: "120%",
                   border: "none",
                   cursor: "pointer",
@@ -96,14 +111,14 @@ export default function Footer() {
                   flexShrink: 0,
                 }}
               >
-                Search
+                Subscribe
               </button>
             </div>
 
             {/* Privacy note */}
             <p
               style={{
-                fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 400,
                 fontSize: "12px",
                 lineHeight: "160%",
@@ -112,18 +127,18 @@ export default function Footer() {
                 maxWidth: "320px",
               }}
             >
-              By subscribing, you agree to our Privacy Policy and consent to
-              receive updates from our company.
+              By subscribing, you agree to our Privacy Policy and consent to receive updates from our
+              company.
             </p>
           </div>
 
           {/* Right: link columns */}
           <div
             style={{
-              flex: 1,
+              flex: "1 1 260px",
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "40px",
+              gridTemplateColumns: "repeat(auto-fill, minmax(120px, 1fr))",
+              gap: "clamp(20px, 4vw, 40px)",
             }}
           >
             {/* Column 1 */}
@@ -133,7 +148,7 @@ export default function Footer() {
                   key={link}
                   href="#"
                   style={{
-                    fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                    fontFamily: "'Poppins', sans-serif",
                     fontWeight: 400,
                     fontSize: "14px",
                     lineHeight: "160%",
@@ -153,7 +168,7 @@ export default function Footer() {
                   key={link}
                   href="#"
                   style={{
-                    fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                    fontFamily: "'Poppins', sans-serif",
                     fontWeight: 400,
                     fontSize: "14px",
                     lineHeight: "160%",
@@ -173,7 +188,7 @@ export default function Footer() {
                   key={link}
                   href="#"
                   style={{
-                    fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+                    fontFamily: "'Poppins', sans-serif",
                     fontWeight: 400,
                     fontSize: "14px",
                     lineHeight: "160%",
@@ -195,46 +210,44 @@ export default function Footer() {
           style={{
             maxWidth: "1200px",
             margin: "0 auto",
-            padding: "20px 120px",
-            boxSizing: "content-box",
+            padding: "20px clamp(16px, 5vw, 80px)",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "12px",
           }}
         >
           <p
             style={{
-              fontFamily: "'Poppins', var(--font-poppins), sans-serif",
+              fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
               fontSize: "13px",
               color: "#82868E",
               margin: 0,
             }}
           >
-            Â© 2023 ByteSpace. All rights reserved.
+            © 2023 ByteSpace. All rights reserved.
           </p>
-          <div style={{ display: "flex", gap: "24px" }}>
-            {["Privacy Policy", "Terms of Service", "Cookies Settings"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href="#"
-                  style={{
-                    fontFamily: "'Poppins', var(--font-poppins), sans-serif",
-                    fontWeight: 400,
-                    fontSize: "13px",
-                    color: "#82868E",
-                    textDecoration: "none",
-                  }}
-                >
-                  {item}
-                </a>
-              )
-            )}
+          <div style={{ display: "flex", gap: "clamp(12px, 2.5vw, 24px)", flexWrap: "wrap" }}>
+            {["Privacy Policy", "Terms of Service", "Cookies Settings"].map((item) => (
+              <a
+                key={item}
+                href="#"
+                style={{
+                  fontFamily: "'Poppins', sans-serif",
+                  fontWeight: 400,
+                  fontSize: "13px",
+                  color: "#82868E",
+                  textDecoration: "none",
+                }}
+              >
+                {item}
+              </a>
+            ))}
           </div>
         </div>
       </div>
     </footer>
   );
 }
-
