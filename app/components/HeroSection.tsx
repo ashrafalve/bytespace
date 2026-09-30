@@ -60,10 +60,16 @@ export default function HeroSection() {
         <Image src="/assets/Frame (1).png" alt="" fill sizes="175px" className="object-contain" />
       </div>
 
-      {/* Bottom-Left: White torus ring cone (positioned more right and down) */}
+      {/* Bottom-Left: White torus ring cone (finely tuned edge position) */}
       <div
         className="absolute pointer-events-none hero-deco"
-        style={{ left: "clamp(120px, 20vw, 26%)", top: "71%", width: "clamp(90px, 13vw, 190px)", height: "clamp(90px, 13vw, 190px)", zIndex: 3 }}
+        style={{
+          left: "calc(50% - clamp(325px, 42.5vw, 560px))",
+          top: "69%",
+          width: "clamp(90px, 13vw, 190px)",
+          height: "clamp(90px, 13vw, 190px)",
+          zIndex: 3,
+        }}
       >
         <Image src="/assets/Cone (2).png" alt="" fill sizes="190px" className="object-contain" />
       </div>
@@ -84,10 +90,16 @@ export default function HeroSection() {
         <Image src="/assets/Cone.png" alt="" fill sizes="188px" className="object-contain" />
       </div>
 
-      {/* Bottom-Right: Yellow frame shape Frame (1).png (touching right edge of green bg circle) */}
+      {/* Bottom-Right: Yellow frame shape Frame (1).png (finely tuned edge position) */}
       <div
         className="absolute pointer-events-none hero-deco"
-        style={{ right: "clamp(110px, 18.5vw, 23.5%)", top: "73%", width: "clamp(95px, 13.5vw, 200px)", height: "clamp(95px, 13.5vw, 200px)" }}
+        style={{
+          right: "calc(50% - clamp(340px, 44vw, 590px))",
+          top: "70%",
+          width: "clamp(95px, 13.5vw, 200px)",
+          height: "clamp(95px, 13.5vw, 200px)",
+          zIndex: 3,
+        }}
       >
         <Image src="/assets/Frame (1).png" alt="" fill sizes="200px" className="object-contain" />
       </div>
