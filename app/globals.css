@@ -47,19 +47,19 @@ body {
 
 /* Hero floating cards — precision responsive positioning */
 .hero-card-1 {
-  left: clamp(4px, 2%, 16px) !important;
+  left: clamp(12px, 8%, 45px) !important;
   top: 15px !important;
   width: clamp(112px, 32vw, 150px) !important;
 }
 
 .hero-card-2 {
-  right: clamp(4px, 2%, 16px) !important;
+  right: clamp(12px, 8%, 45px) !important;
   top: 10px !important;
   width: clamp(112px, 32vw, 160px) !important;
 }
 
 .hero-card-3 {
-  left: clamp(4px, 2%, 16px) !important;
+  left: clamp(12px, 8%, 40px) !important;
   bottom: 8px !important;
   width: clamp(130px, 38vw, 180px) !important;
 }
@@ -67,17 +67,17 @@ body {
 /* Tablet & Mid-range (640px to 1023px) */
 @media (min-width: 640px) {
   .hero-card-1 {
-    left: clamp(12px, calc(50% - 330px), 110px) !important;
+    left: clamp(30px, calc(50% - 240px), 160px) !important;
     top: clamp(25px, 6vw, 75px) !important;
     width: clamp(140px, 18vw, 175px) !important;
   }
   .hero-card-2 {
-    right: clamp(12px, calc(50% - 330px), 100px) !important;
+    right: clamp(30px, calc(50% - 240px), 150px) !important;
     top: clamp(20px, 5vw, 65px) !important;
     width: clamp(150px, 20vw, 195px) !important;
   }
   .hero-card-3 {
-    left: clamp(12px, calc(50% - 340px), 90px) !important;
+    left: clamp(30px, calc(50% - 250px), 140px) !important;
     bottom: clamp(12px, 3vw, 25px) !important;
     width: clamp(160px, 22vw, 215px) !important;
   }
@@ -86,17 +86,17 @@ body {
 /* Desktop & Large Screen (1024px to 1920px+) */
 @media (min-width: 1024px) {
   .hero-card-1 {
-    left: calc(50% - 410px) !important;
+    left: calc(50% - 300px) !important;
     top: 110px !important;
     width: 208px !important;
   }
   .hero-card-2 {
-    right: calc(50% - 425px) !important;
+    right: calc(50% - 300px) !important;
     top: 90px !important;
     width: 232px !important;
   }
   .hero-card-3 {
-    left: calc(50% - 445px) !important;
+    left: calc(50% - 310px) !important;
     bottom: 30px !important;
     width: 258px !important;
   }
