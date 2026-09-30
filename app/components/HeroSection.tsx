@@ -226,9 +226,9 @@ export default function HeroSection() {
           className="relative w-full flex justify-center items-end"
           style={{
             maxWidth: "1200px",
-            minHeight: "clamp(220px, 42vw, 541px)",
+            minHeight: "clamp(260px, 42vw, 541px)",
             marginTop: "clamp(8px, 3vw, 32px)",
-            paddingBottom: "0px",
+            paddingBottom: "16px",
             marginBottom: "0px",
           }}
         >
@@ -260,9 +260,6 @@ export default function HeroSection() {
             className="floating-card hero-card-1"
             style={{
               position: "absolute",
-              left: "clamp(4px, calc(50% - 24vw), calc(50% - 290px))",
-              top: "clamp(10px, 8vw, 150px)",
-              width: "clamp(112px, 16vw, 208px)",
               backgroundColor: "#FFFFFF",
               borderRadius: "clamp(8px, 1.2vw, 14px)",
               padding: "clamp(4px, 0.9vw, 8px) clamp(6px, 1.2vw, 12px)",
@@ -298,9 +295,6 @@ export default function HeroSection() {
             className="floating-card hero-card-2"
             style={{
               position: "absolute",
-              right: "clamp(4px, calc(50% - 24vw), calc(50% - 280px))",
-              top: "clamp(8px, 6vw, 130px)",
-              width: "clamp(105px, 17vw, 232px)",
               backgroundColor: "#FFFFFF",
               borderRadius: "clamp(8px, 1.3vw, 16px)",
               padding: "clamp(6px, 1.1vw, 16px)",
@@ -362,9 +356,6 @@ export default function HeroSection() {
             className="floating-card hero-card-3"
             style={{
               position: "absolute",
-              left: "clamp(4px, calc(50% - 26vw), calc(50% - 330px))",
-              bottom: "clamp(8px, 3vw, 35px)",
-              width: "clamp(128px, 19vw, 258px)",
               backgroundColor: "#FFFFFF",
               borderRadius: "clamp(8px, 1.3vw, 16px)",
               padding: "clamp(6px, 1.1vw, 16px)",
