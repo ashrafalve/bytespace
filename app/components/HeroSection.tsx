@@ -228,7 +228,7 @@ export default function HeroSection() {
             maxWidth: "1200px",
             minHeight: "clamp(260px, 42vw, 541px)",
             marginTop: "clamp(8px, 3vw, 32px)",
-            paddingBottom: "16px",
+            paddingBottom: "0px",
             marginBottom: "0px",
           }}
         >
